@@ -11,6 +11,18 @@ The project has two parts:
 
 The robot creates its own WiFi network (`QuadBot-E`, password `12345678`, address `http://192.168.4.1`). The phone joins that network and sends HTTP commands.
 
+## Before you start: set your own WiFi and API key
+
+The published code contains **placeholders only**. You must set your own values:
+
+1. **In the firmware**, open `QD020_Spider_Ultrasonic.ino` and, **before uploading**, change:
+   - `STA_SSID` = `"YOUR_WIFI_NAME"`: your home WiFi name (optional but needed if you want the robot on your home network)
+   - `STA_PASS` = `"YOUR_WIFI_PASSWORD"`: your home WiFi password
+   - `API_KEY` = `"CHANGE_ME"`: a long random secret of your own (for example 32 random hex characters)
+2. **In the Android app**, open **Settings** (gear icon) and enter **the same key** you put in `API_KEY`. Until they match, the robot answers `401` and the app shows "Wrong API key".
+
+Never commit your real WiFi password or API key. Keep them in a local copy such as `QD020_Spider_Ultrasonic.local.ino`, which `.gitignore` excludes.
+
 ## Wiring: ultrasonic sensor on the P7 header
 
 The sensor uses the ESP8266's TX/RX pins, so **the serial monitor is not available** while it is connected.
@@ -105,3 +117,7 @@ Movement commands run for 10 seconds and then stop on their own.
 ## Security note
 
 The API key is a shared secret sent over plain HTTP. It keeps casual users on the same network out, but it is not real authentication. Don't commit your real WiFi password or API key.
+
+## License
+
+[MIT](LICENSE)
