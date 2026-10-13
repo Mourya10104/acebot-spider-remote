@@ -1,0 +1,32 @@
+# Built apps (attach them to a GitHub Release instead)
+*.apk
+*.aab
+
+# Local firmware copy with real WiFi name/password and API key
+*.local.ino
+
+# Flutter / Dart build output
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Android local files
+local.properties
+.gradle/
+*.iml
+*.keystore
+*.jks
+key.properties
+
+# IDE folders
+.idea/
+.vscode/
+*.swp
+
+# OS junk
+.DS_Store
+Thumbs.db
